@@ -30,14 +30,14 @@ class ProfilePageState extends State<ProfilePage> {
   }
 
   Future<void> updateProfile() async {
-    String updateStatus = "Успешное обновление";
+    String updateStatus = "Обновлено";
     try {
       String userName = controllerUsername.text;
       String email = controllerEmail.text;
 
       await DIO.post(URL.user.value, data: User(userName: userName, email: email));
     } on DioError {
-      updateStatus = "Данный логин уже занят";
+      updateStatus = "Логин уже занят";
     }
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(updateStatus, textAlign: TextAlign.center)));
   }
@@ -73,8 +73,8 @@ class ProfilePageState extends State<ProfilePage> {
                         if (value == null || value.isEmpty) {
                           return "Логин не должен быть пустым";
                         }
-                        if (value.length < 8 || value.length >= 16) {
-                          return "Логин должен быть от 8 до 16 символов";
+                        if (value.length < 7 || value.length >= 10) {
+                          return "Логин должен быть от 7 до 10 символов";
                         }
                         return null;
                       }),

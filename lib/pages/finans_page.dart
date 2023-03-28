@@ -276,7 +276,7 @@ class HistoryPageState extends State<HistoryPage> {
                   tooltip: "Сортировка",
                   itemBuilder: (context) => [
                     PopupMenuItem(
-                      child: const Text("Удаленные"),
+                      child: const Text("По удаленным"),
                       onTap: () {
                         filter = 'deleted';
                         getNotes(filter, '');

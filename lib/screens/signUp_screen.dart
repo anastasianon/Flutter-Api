@@ -31,7 +31,7 @@ class SignUpScreenState extends State<SignUpScreen> {
       await DIO.put(URL.token.value, data: User(userName: userName, email: email, password: password));
     } on DioError {
       ScaffoldMessenger.of(context)
-          .showSnackBar(const SnackBar(content: Text('Данный логин уже занят', textAlign: TextAlign.center)));
+          .showSnackBar(const SnackBar(content: Text('Логин уже занят', textAlign: TextAlign.center)));
     }
   }
 
@@ -55,8 +55,8 @@ class SignUpScreenState extends State<SignUpScreen> {
                           if (value == null || value.isEmpty) {
                             return "Логин не должен быть пустым";
                           }
-                          if (value.length < 8 || value.length >= 16) {
-                            return "Логин должен быть от 8 до 16 символов";
+                          if (value.length < 7 || value.length >= 10) {
+                            return "Логин должен быть от 7 до 10 символов";
                           }
                           return null;
                         }),
@@ -83,8 +83,8 @@ class SignUpScreenState extends State<SignUpScreen> {
                           if (value == null || value.isEmpty) {
                             return "Пароль не должен быть пустым";
                           }
-                          if (value.length < 8 || value.length >= 16) {
-                            return "Пароль должен быть от 8 до 16 символов";
+                          if (value.length < 7 || value.length >= 10) {
+                            return "Пароль должен быть от 7 до 10 символов";
                           }
                           return null;
                         }),
