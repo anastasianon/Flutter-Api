@@ -70,14 +70,16 @@ class SignInScreenState extends State<SignInScreen> {
                       TextFormField(
                         controller: controllerUsername,
                         decoration: const InputDecoration(
-                            border: OutlineInputBorder(), labelText: "Логин"),
+                            border: UnderlineInputBorder(), labelText: "Логин"),
+                            style: TextStyle(fontSize: 22),
                       ),
                       const Padding(
                           padding: EdgeInsets.fromLTRB(25, 5, 25, 20)),
                       TextFormField(
                         controller: controllerPassword,
                         decoration: const InputDecoration(
-                            border: OutlineInputBorder(), labelText: "Пароль"),
+                            border: UnderlineInputBorder(), labelText: "Пароль"),
+                            style: TextStyle(fontSize: 22),
                       ),
                     ],
                   ),

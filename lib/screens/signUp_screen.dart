@@ -60,7 +60,8 @@ class SignUpScreenState extends State<SignUpScreen> {
                           }
                           return null;
                         }),
-                        decoration: const InputDecoration(border: OutlineInputBorder(), labelText: "Логин"),
+                        decoration: const InputDecoration(border: UnderlineInputBorder(), labelText: "Логин"),
+                        style: TextStyle(fontSize: 22),
                       ),
                       const Padding(padding: EdgeInsets.fromLTRB(25, 5, 25, 20)),
                       TextFormField(
@@ -74,7 +75,8 @@ class SignUpScreenState extends State<SignUpScreen> {
                           }
                           return null;
                         }),
-                        decoration: const InputDecoration(border: OutlineInputBorder(), labelText: "Email"),
+                        decoration: const InputDecoration(border: UnderlineInputBorder(), labelText: "Email"),
+                        style: TextStyle(fontSize: 22),
                       ),
                       const Padding(padding: EdgeInsets.fromLTRB(25, 5, 25, 20)),
                       TextFormField(
@@ -88,7 +90,8 @@ class SignUpScreenState extends State<SignUpScreen> {
                           }
                           return null;
                         }),
-                        decoration: const InputDecoration(border: OutlineInputBorder(), labelText: "Пароль"),
+                        decoration: const InputDecoration(border: UnderlineInputBorder(), labelText: "Пароль"),
+                        style: TextStyle(fontSize: 22),
                       ),
                     ],
                   ),
