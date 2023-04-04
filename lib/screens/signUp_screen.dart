@@ -27,11 +27,13 @@ class SignUpScreenState extends State<SignUpScreen> {
       String password = controllerPassword.text;
 
       DIO.interceptors.add(CustomInterceptor());
-      Navigator.push(context, MaterialPageRoute(builder: (context) => const SignInScreen()));
-      await DIO.put(URL.token.value, data: User(userName: userName, email: email, password: password));
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => const SignInScreen()));
+      await DIO.put(URL.token.value,
+          data: User(userName: userName, email: email, password: password));
     } on DioError {
-      ScaffoldMessenger.of(context)
-          .showSnackBar(const SnackBar(content: Text('Логин уже занят', textAlign: TextAlign.center)));
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text('Логин уже занят', textAlign: TextAlign.center)));
     }
   }
 
@@ -60,10 +62,12 @@ class SignUpScreenState extends State<SignUpScreen> {
                           }
                           return null;
                         }),
-                        decoration: const InputDecoration(border: UnderlineInputBorder(), labelText: "Логин"),
+                        decoration: const InputDecoration(
+                            border: UnderlineInputBorder(), labelText: "Логин"),
                         style: TextStyle(fontSize: 22),
                       ),
-                      const Padding(padding: EdgeInsets.fromLTRB(25, 5, 25, 20)),
+                      const Padding(
+                          padding: EdgeInsets.fromLTRB(25, 5, 25, 20)),
                       TextFormField(
                         controller: controllerEmail,
                         validator: ((value) {
@@ -75,10 +79,12 @@ class SignUpScreenState extends State<SignUpScreen> {
                           }
                           return null;
                         }),
-                        decoration: const InputDecoration(border: UnderlineInputBorder(), labelText: "Email"),
+                        decoration: const InputDecoration(
+                            border: UnderlineInputBorder(), labelText: "Email"),
                         style: TextStyle(fontSize: 22),
                       ),
-                      const Padding(padding: EdgeInsets.fromLTRB(25, 5, 25, 20)),
+                      const Padding(
+                          padding: EdgeInsets.fromLTRB(25, 5, 25, 20)),
                       TextFormField(
                         controller: controllerPassword,
                         validator: ((value) {
@@ -90,7 +96,9 @@ class SignUpScreenState extends State<SignUpScreen> {
                           }
                           return null;
                         }),
-                        decoration: const InputDecoration(border: UnderlineInputBorder(), labelText: "Пароль"),
+                        decoration: const InputDecoration(
+                            border: UnderlineInputBorder(),
+                            labelText: "Пароль"),
                         style: TextStyle(fontSize: 22),
                       ),
                     ],
@@ -104,29 +112,34 @@ class SignUpScreenState extends State<SignUpScreen> {
                 child: Column(
                   children: [
                     ElevatedButton(
-                        onPressed: () async {
-                          if (!key.currentState!.validate()) return;
-                          register();
-                        },
-                        child: const Text("Зарегистрироваться"),
-                        style: ElevatedButton.styleFrom(
-                primary: Colors.purple,
-                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-                textStyle: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold)),),
+                      onPressed: () async {
+                        if (!key.currentState!.validate()) return;
+                        register();
+                      },
+                      child: const Text("Зарегистрироваться"),
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.purple,
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 50, vertical: 20),
+                          textStyle: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold)),
+                    ),
                     const Padding(padding: EdgeInsets.fromLTRB(25, 5, 25, 5)),
                     ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => const SignInScreen()));
-                        },
-                        child: const Text("Назад"),
-                        style: ElevatedButton.styleFrom(
-                primary: Colors.purple,
-                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-                textStyle: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold)),),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const SignInScreen()));
+                      },
+                      child: const Text("Назад"),
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.purple,
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 50, vertical: 20),
+                          textStyle: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold)),
+                    ),
                   ],
                 ),
               ),
